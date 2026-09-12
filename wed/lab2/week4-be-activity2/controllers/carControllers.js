@@ -50,7 +50,7 @@ const updateCar = async (req, res) => {
   }
 
   try {
-    const updatedCar = await Car.findOneAndReplace(
+    const updatedCar = await Car.findOneAndReplace( // Completely replaces the existing entry with the recieved json from the body
       { _id: carId },
       { ...req.body },
       { new: true }

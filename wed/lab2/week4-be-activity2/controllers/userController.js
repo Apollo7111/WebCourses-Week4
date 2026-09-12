@@ -50,7 +50,7 @@ const updateUser = async (req, res) => {
   }
 
   try {
-    const updatedUser = await User.findOneAndReplace(
+    const updatedUser = await User.findOneAndReplace( // Completely replaces the existing entry with the recieved json from the body
       { _id: userId },
       { ...req.body },
       { new: true }
